@@ -1,0 +1,89 @@
+@import "./colors.css";
+
+/* Cor de fundo */
+body {
+    background-color: var(--background-color);
+}
+
+/* Remove estilização dos links */
+a {
+    all: unset;
+    text-decoration: none;
+}
+
+/* Links com interação */
+.hover-interaction-link, .hover-interaction-link-alternative, .hover-interaction-link-darker {
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+}
+.hover-interaction-link:hover {
+    color: var(--link-hover-color);
+}
+.hover-interaction-link-alternative:hover {
+    text-decoration: underline;
+    color: var(--link-hover-color-alternative);
+}
+.hover-interaction-link-darker:hover {
+    color: var(--link-darker-hover-color);
+}
+
+/* Cursor de link */
+a, button, router-link, .hover-interaction-link:hover, .hover-interaction-link-alternative:hover, .hover-interaction-link-darker:hover {
+    cursor: pointer;
+}
+
+/* Definições globais de estilização de texto */
+p, a, h1, h2, h3, h4, h5, h6, .text {font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+p, a, .text {font-size: 1rem;}
+
+/* Define classes para estilização de texto */
+.text-center {text-align: center;}
+.text-justify {text-align: justify;}
+.text-common-color {color: var(--text-color);}
+.text-darker-color {color: var(--darker-text-color)}
+
+/* Contêiner de conteúdo da página */
+#main-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25vh;
+}
+
+/* Para subtítulos */
+.subtitle {
+    font-size: 2.5rem; 
+    color: var(--text-color);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+/* Para botões */
+.standard-button, .gray-button, .red-button, .pink-button, .orange-button {
+    color: antiquewhite;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: none;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+}
+.standard-button:hover, .gray-button:hover, .red-button:hover, .pink-button:hover, .orange-button:hover {
+    color: gray;
+    background-color: white;
+    border: 2px solid var(--standard-button-color);
+}
+.standard-button {
+    background-color: var(--standard-button-color);
+}
+.gray-button {
+    background-color: var(--gray-button-color);
+}
+.red-button {
+    background-color: var(--red-button-color);
+}
+.pink-button {
+    background-color: var(--pink-button-color);
+}
+.orange-button {
+    background-color: var(--orange-button-color);
+}

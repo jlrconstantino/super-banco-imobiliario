@@ -1,0 +1,57 @@
+/* Cores */
+:root {
+
+    /* Fundo */
+    --background-color: #F7F7F7;
+    --foreground-color: #4fa7da;
+    --footer-color: #E0E0E0;
+    --blue-emphasis-color: rgba(208, 228, 240, 0.7);
+    --dark-blue-emphasis-color: rgba(151, 195, 223, 0.7);
+    --red-emphasis-color: rgba(240, 208, 208, 0.7);
+
+    /* Botões */
+    --standard-button-color: #4fa7da;
+    --gray-button-color: #a7a7a7;
+    --red-button-color: #d34242;
+    --pink-button-color: rgb(187, 42, 73);
+    --orange-button-color: #cf910ce0;;
+
+    /* Seção superior do header */
+    --header-top-bar-text-color: white;
+
+    /* Seção inferior do header*/
+    --header-bottom-bar-background-color: aliceblue;
+    --header-bottom-bar-text-color: rgb(26, 24, 24);
+
+    /* Caixa de pesquisa do header */
+    --header-searcher-background-color: #fcfcfc;
+    --header-searcher-border: 0.05rem outset #f0f0f0;
+
+    /* Barra de navegação */
+    --navigation-bar-background-color: #f2f2f2;;
+
+    /* Tabelas */
+    --table-row-0-background-color: #f0f0f0;
+    --table-row-1-background-color: #e7e7e7;
+
+    /* Sombra para os itens */
+    --box-border: 1px groove rgba(190, 190, 190, 0.9);
+    --box-light-border: 1px groove rgba(230, 230, 230, 0.9);
+    --box-red-border: 1px groove rgba(189, 75, 75, 0.9);
+    --box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.281);
+    --box-shadow-minimized: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.281);
+    --box-shadow-left: -0.175rem 0.175rem 0.5rem rgba(0, 0, 0, 0.281);
+    --inner-box-shadow: inset 0px 0px 5px 2px rgba(0,0,0,0.6);
+
+    /* Links */
+    --link-hover-color: #69b1db;
+    --link-hover-color-alternative: #d8d8d8;
+    --link-darker-hover-color: #2878a7;
+
+    /* Cor de texto */
+    --text-color: rgb(48, 48, 48);
+    --darker-text-color: rgb(32, 32, 32);
+    --review-text-color: #2484bb;
+    --red-text-color: rgba(221, 52, 52, 0.9);
+    --dark-red-text-color: rgba(150, 3, 3, 0.9);
+}
