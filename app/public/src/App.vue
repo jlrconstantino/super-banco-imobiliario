@@ -5,13 +5,9 @@
   <HeaderComponent></HeaderComponent>
 
   <!-- PÁGINA PRINCIPAL -->
-  <div id="main-container">
-    <NavBar></NavBar>
+  <div id="main-container" :class="{ 'main-container-margin' : display_margin }">
     <router-view></router-view>
   </div>
-
-  <!-- FOOTER -->
-  <FooterComponent></FooterComponent>
 
 </template>
 
@@ -21,8 +17,6 @@
 
   // Importação dos componentes
   import HeaderComponent from './components/HeaderComponent.vue'
-  import NavBar from './components/NavBar.vue'
-  import FooterComponent from './components/FooterComponent.vue'
 
   // Lógica local
   export default {
@@ -30,10 +24,14 @@
     // Componentes
     components: {
       HeaderComponent, 
-      NavBar, 
-      FooterComponent, 
-    }
+    }, 
 
+    // Apresentação de margem
+    computed: {
+      display_margin() {
+        return this.$route.name != "bank";
+      }, 
+    }
   }
   
 </script>
