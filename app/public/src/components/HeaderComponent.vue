@@ -1,6 +1,6 @@
 <!-- .:::: TEMPLATE ::::. -->
 <template>
-    <div id="header-container">
+    <div id="header-container" v-if="not_in_bank">
         <header>
             <img class="header-img" :class="{ 'header-img--hidden': !show_header }" src="@/assets/logo/logo.png">
         </header>
@@ -58,6 +58,13 @@
                 }
             },
         }, 
+
+        // Quando não está no banco
+        computed: {
+            not_in_bank() {
+                return this.$route.name !== "bank";
+            }
+        },
     }
 </script>
 
@@ -69,6 +76,7 @@
         position: fixed;
         height: auto;
         width: 100%;
+        z-index: -10;
     }
     header {
         width: 100%;

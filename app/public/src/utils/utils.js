@@ -17,3 +17,8 @@ export function format_date_to_string(date){
 export function get_random_integer(max) {
     return Math.floor(Math.random() * max) + 1;
 }
+
+// Template de jogador
+export function get_dummy_player() {
+    return {id: -1, value: 0, name: 'none', balance: 0, filename: 'bag.png'};
+}

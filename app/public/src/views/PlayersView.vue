@@ -3,12 +3,7 @@
 
     <!-- Mostrador de jogadores -->
     <div id="players-displayer">
-        <player filename="bag.png"></player>
-        <player filename="bank.png"></player>
-        <player filename="briefcase.png"></player>
-        <player filename="coin.png"></player>
-        <player filename="coins.png"></player>
-        <player filename="piggybank.png"></player>
+        <player-displayer v-for="id in player_ids" :key="id" :player_id="id"></player-displayer>
     </div>
 
     <!-- Acesso ao banco -->
@@ -25,18 +20,35 @@
 <!-- .:::: SCRIPT ::::. -->
 <script>
 
+    // Compartilhamento de estados
+    import store from '@/store';
+
     // Importação dos componentes
     import PlayerComponentVue from '@/components/PlayerComponent.vue';
 
     // Lógica local
     export default {
 
-        // Nome do componente
-        name: 'PlayersView',
+        // Componentes
+        name: 'PlayersView', 
+
+        // IDs dos jogadores
+        data() {
+            return {
+                player_ids: [],
+            };
+        }, 
+
+        // Aquisição dos IDs dos jogadores
+        created() {
+            this.player_ids = store.getters.players.map((player) => {
+                return player.id;
+            });
+        },
 
         // Atribuição de componentes
         components: {
-            "player": PlayerComponentVue,
+            "player-displayer": PlayerComponentVue,
         }, 
 
         // Navegação
@@ -64,7 +76,6 @@
         align-items: center;
         gap: 2rem;
     }
-
     /* Acesso ao banco */
     @media (orientation: portrait) {
         #players-bank-access {

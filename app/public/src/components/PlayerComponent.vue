@@ -1,14 +1,12 @@
 <!-- .:::: TEMPLATE ::::. -->
 <template>
     <div class="player-container">
-        <img class="player-image" :src="require(`@/assets/players/${filename}`)">
+        <img class="player-image" :src="require(`@/assets/players/${player.filename}`)">
         <div class="player-balance">
             <img src="@/assets/icons/dollar-alt.svg">
-            <p>25.000</p>
-        </div>
-        <div class="player-patrimony">
-            <img src="@/assets/icons/building.svg">
-            <p>32.000</p>
+            <p>
+                <animated-number :number="player.balance"></animated-number>
+            </p>
         </div>
     </div>
 </template>
@@ -17,20 +15,31 @@
 <!-- .:::: SCRIPT ::::. -->
 <script>
 
+    // Estados compartilhados
+    import store from '@/store';
+
+    // Animador numérico
+    import NumberAnimatorComponentVue from './NumberAnimatorComponent.vue';
+
     // Lógica local
     export default {
 
         // Nome do componente
-        name: 'PlayerComponent',
+        name: 'PlayerComponent', 
+        components: {'animated-number': NumberAnimatorComponentVue},
 
         // Atributos externos
         props: {
-            'filename': String
+            'player_id': {default: 0}
         }, 
 
-        // Métodos auxiliares
-        methods: {
-        }, 
+        // Jogador
+        computed: {
+            player() {
+                return store.getters.players[this.player_id];
+            }, 
+        },
+        
     }
 </script>
 
@@ -74,20 +83,15 @@
     }
 
     /* Informações do jogador */
-    .player-balance, .player-patrimony {
+    .player-balance {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-    }
-    .player-balance {
         margin-bottom: 0.3rem;
         width: 100%;
     }
-    .player-patrimony {
-        width: 75%;
-    }
-    .player-balance p, .player-patrimony p {
+    .player-balance p {
         width: auto;
         max-width: calc(75%-2rem);
         height: auto;
@@ -95,23 +99,13 @@
         justify-content: center;
         padding: 0.5rem 1rem;
         border-radius: 8px;
-    }
-    .player-balance img, .player-patrimony img {
-        width: 20%;
-        height: auto;
-    }
-    .player-patrimony img {
-        margin-right: 5%;
-    }
-    .player-balance p {
         background-color: var(--main-white);
         font-size: 1.4rem;
         color: var(--main-blue);
     }
-    .player-patrimony p {
-        background-color: var(--main-blue);
-        font-size: 1rem;
-        color: var(--main-white);
+    .player-balance img {
+        width: 20%;
+        height: auto;
     }
 
 </style>
