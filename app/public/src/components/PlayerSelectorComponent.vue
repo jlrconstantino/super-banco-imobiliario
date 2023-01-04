@@ -9,7 +9,7 @@
             <select name="Selecionar jogador" v-model="player" class="button">
                 <option v-for="elem in players" :key="elem" :value="elem">{{elem.name}}</option>
             </select>
-            <img :src="require(`@/assets/players/${player.filename}`)" class="player-icon">
+            <img :src="require(`@/assets/players/${player.filename}`)" class="player-icon" :style="css_variables">
             <div class="secondary-container">
                 <img class="dollar-icon" src="@/assets/icons/blue-dollar-alt.svg">
                 <p>
@@ -70,7 +70,14 @@
             // Detecção de orientação da tela
             is_landscape() {
                 return screen.orientation.type[0] === 'l';
-            },
+            }, 
+
+            // Para automação do filtro CSS
+            css_variables() {
+                return {
+                    '--hue-rotation': this.player.hue + 'deg'
+                };
+            }, 
         },
 
         // Dados locais
@@ -164,7 +171,9 @@
         width: 60%;
         height: auto;
         padding: 1rem;
-        filter: saturate(200%) hue-rotate(180deg);
+        
+        /* Filtro automatizado */
+        filter: hue-rotate(var(--hue-rotation));
     }
     @media (orientation: portrait) {
         #player-selector-container .player-icon {

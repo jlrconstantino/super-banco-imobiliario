@@ -2,7 +2,7 @@
 <template>
 
   <!-- HEADER -->
-  <HeaderComponent></HeaderComponent>
+  <!-- <HeaderComponent></HeaderComponent> -->
 
   <!-- PÁGINA PRINCIPAL -->
   <div id="main-container" :class="{ 'main-container-margin' : display_margin }">
@@ -16,15 +16,17 @@
 <script>
 
   // Importação dos componentes
-  import HeaderComponent from './components/HeaderComponent.vue'
+  // import HeaderComponent from './components/HeaderComponent.vue'
 
   // Lógica local
   export default {
 
     // Componentes
+    /*
     components: {
       HeaderComponent, 
-    }, 
+    },
+    */
 
     // Apresentação de margem
     computed: {

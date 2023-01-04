@@ -80,6 +80,7 @@
                                 id: this.unselected_players[i].id, 
                                 value: value,
                             });
+                            update_player(this.unselected_players[i]);
                         }
 
                         // Atualização do ID salvo
@@ -118,6 +119,7 @@
                                 id: this.unselected_players[i].id, 
                                 value: value,
                             });
+                            update_player(this.unselected_players[i]);
                         }
 
                         // Atualização do ID salvo
