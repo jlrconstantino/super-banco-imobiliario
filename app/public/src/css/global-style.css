@@ -23,16 +23,6 @@ p, a, .text {font-size: 1rem;}
     display: flex;
     flex-direction: column;
 }
-@media (orientation: portrait) {
-    .main-container-margin {
-        margin-top: 24%;
-    }
-}
-@media (orientation: landscape) {
-    .main-container-margin {
-        margin-top: 10%;
-    }
-}
 
 /* Botões */
 .button, .red-button, .green-button {

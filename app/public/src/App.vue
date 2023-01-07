@@ -1,11 +1,8 @@
 <!-- .:::: TEMPLATE ::::. -->
 <template>
 
-  <!-- HEADER -->
-  <!-- <HeaderComponent></HeaderComponent> -->
-
   <!-- PÁGINA PRINCIPAL -->
-  <div id="main-container" :class="{ 'main-container-margin' : display_margin }">
+  <div id="main-container">
     <router-view></router-view>
   </div>
 
@@ -15,26 +12,8 @@
 <!-- .:::: SCRIPT ::::. -->
 <script>
 
-  // Importação dos componentes
-  // import HeaderComponent from './components/HeaderComponent.vue'
-
   // Lógica local
-  export default {
-
-    // Componentes
-    /*
-    components: {
-      HeaderComponent, 
-    },
-    */
-
-    // Apresentação de margem
-    computed: {
-      display_margin() {
-        return this.$route.name != "bank";
-      }, 
-    }
-  }
+  export default {}
   
 </script>
 

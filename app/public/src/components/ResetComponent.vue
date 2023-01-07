@@ -1,6 +1,7 @@
 <!-- .:::: TEMPLATE ::::. -->
 <template>
     <div id="reset-container">
+        <h2 v-if="!is_landscape">Reiniciar Jogo</h2>
         <div class="player-reset" v-for="player in players" :key="player">
             <player-reset :player_id="player.id"></player-reset>
         </div>
@@ -65,6 +66,7 @@
                     players[i].balance = this.initial_cash;
                     update_player(players[i]);
                 }
+                alert("Novo jogo criado.");
             },
         }, 
 
@@ -73,6 +75,9 @@
             players() {
                 return store.getters.players;
             },
+            is_landscape() {
+                return screen.orientation.type[0] === 'l';
+            }, 
         },
 
     }
@@ -97,6 +102,11 @@
         margin-bottom: 2%;
         width: 28%;
     }
+    @media (orientation: portrait) {
+        #reset-container .player-reset {
+            width: 86.5%;
+        }
+    }
 
     /* Seção de reset */
     #resetter {
@@ -120,9 +130,22 @@
         font-weight: bold;
     }
     @media (orientation: portrait) {
+        #resetter {
+            margin-top: 5%;
+            margin-bottom: 5%;
+            margin-right: 4.5%;
+            width: 100%;
+            flex-direction: column;
+        }
+        #resetter p {
+            margin: 5% 0;
+        }
+        #resetter .input-number, #resetter .button {
+            margin-bottom: 5%;
+        }
         #resetter p, #resetter input {
             font-size: 1.2rem;
-        }   
+        } 
     }
     @media (orientation: landscape) {
         #resetter button {
